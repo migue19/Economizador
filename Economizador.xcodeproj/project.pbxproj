@@ -22,9 +22,8 @@
 		4A438FDB1CFF53F1006EBF44 /* Ingresos.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A438FDA1CFF53F1006EBF44 /* Ingresos.swift */; };
 		4A438FE01CFF5A03006EBF44 /* ModelManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A438FDF1CFF5A03006EBF44 /* ModelManager.swift */; };
 		4A438FE41CFF756B006EBF44 /* EconomizadorDB.sqlite in Resources */ = {isa = PBXBuildFile; fileRef = 4A438FE31CFF756B006EBF44 /* EconomizadorDB.sqlite */; };
-		4A438FE71CFFA8D2006EBF44 /* CustomPresentationAnimationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A438FE51CFFA8D2006EBF44 /* CustomPresentationAnimationController.swift */; };
-		4A438FE81CFFA8D2006EBF44 /* CustomPresentationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A438FE61CFFA8D2006EBF44 /* CustomPresentationController.swift */; };
 		4A438FEA1CFFA9DC006EBF44 /* AgregarIngresoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A438FE91CFFA9DC006EBF44 /* AgregarIngresoViewController.swift */; };
+		52BFCE4D221A1F8500D6482B /* UIViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52BFCE4C221A1F8500D6482B /* UIViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -52,9 +51,8 @@
 		4A438FDA1CFF53F1006EBF44 /* Ingresos.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Ingresos.swift; sourceTree = "<group>"; };
 		4A438FDF1CFF5A03006EBF44 /* ModelManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ModelManager.swift; sourceTree = "<group>"; };
 		4A438FE31CFF756B006EBF44 /* EconomizadorDB.sqlite */ = {isa = PBXFileReference; lastKnownFileType = file; path = EconomizadorDB.sqlite; sourceTree = "<group>"; };
-		4A438FE51CFFA8D2006EBF44 /* CustomPresentationAnimationController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomPresentationAnimationController.swift; sourceTree = "<group>"; };
-		4A438FE61CFFA8D2006EBF44 /* CustomPresentationController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomPresentationController.swift; sourceTree = "<group>"; };
 		4A438FE91CFFA9DC006EBF44 /* AgregarIngresoViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AgregarIngresoViewController.swift; sourceTree = "<group>"; };
+		52BFCE4C221A1F8500D6482B /* UIViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -90,16 +88,14 @@
 		4A438FAF1CFE068F006EBF44 /* Economizador */ = {
 			isa = PBXGroup;
 			children = (
-				4A438FB21CFE068F006EBF44 /* ViewController.swift */,
 				4A438FB01CFE068F006EBF44 /* AppDelegate.swift */,
-				4A438FE91CFFA9DC006EBF44 /* AgregarIngresoViewController.swift */,
-				4A438FEB1CFFC37D006EBF44 /* Librerias Modal */,
+				52BFCE50221A211D00D6482B /* Bridge */,
+				52BFCE4F221A20EF00D6482B /* Storyboards */,
+				52BFCE4E221A20BE00D6482B /* Controllers */,
 				4A438FD31CFF4CCF006EBF44 /* Base de Datos */,
-				4A438FB41CFE068F006EBF44 /* Main.storyboard */,
+				52BFCE4B221A1F5E00D6482B /* Extension */,
 				4A438FB71CFE068F006EBF44 /* Assets.xcassets */,
-				4A438FB91CFE068F006EBF44 /* LaunchScreen.storyboard */,
 				4A438FBC1CFE068F006EBF44 /* Info.plist */,
-				4A438FC21CFF4CAC006EBF44 /* Economizador-Bridging-Header.h */,
 			);
 			path = Economizador;
 			sourceTree = "<group>";
@@ -133,21 +129,46 @@
 			name = Librerias;
 			sourceTree = "<group>";
 		};
-		4A438FEB1CFFC37D006EBF44 /* Librerias Modal */ = {
-			isa = PBXGroup;
-			children = (
-				4A438FE51CFFA8D2006EBF44 /* CustomPresentationAnimationController.swift */,
-				4A438FE61CFFA8D2006EBF44 /* CustomPresentationController.swift */,
-			);
-			name = "Librerias Modal";
-			sourceTree = "<group>";
-		};
 		52993B8F2219F201001B0DF1 /* frameworks */ = {
 			isa = PBXGroup;
 			children = (
 				4A438FE31CFF756B006EBF44 /* EconomizadorDB.sqlite */,
 			);
 			path = frameworks;
+			sourceTree = "<group>";
+		};
+		52BFCE4B221A1F5E00D6482B /* Extension */ = {
+			isa = PBXGroup;
+			children = (
+				52BFCE4C221A1F8500D6482B /* UIViewController.swift */,
+			);
+			name = Extension;
+			sourceTree = "<group>";
+		};
+		52BFCE4E221A20BE00D6482B /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				4A438FB21CFE068F006EBF44 /* ViewController.swift */,
+				4A438FE91CFFA9DC006EBF44 /* AgregarIngresoViewController.swift */,
+			);
+			name = Controllers;
+			sourceTree = "<group>";
+		};
+		52BFCE4F221A20EF00D6482B /* Storyboards */ = {
+			isa = PBXGroup;
+			children = (
+				4A438FB91CFE068F006EBF44 /* LaunchScreen.storyboard */,
+				4A438FB41CFE068F006EBF44 /* Main.storyboard */,
+			);
+			name = Storyboards;
+			sourceTree = "<group>";
+		};
+		52BFCE50221A211D00D6482B /* Bridge */ = {
+			isa = PBXGroup;
+			children = (
+				4A438FC21CFF4CAC006EBF44 /* Economizador-Bridging-Header.h */,
+			);
+			name = Bridge;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -224,15 +245,14 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				4A438FE71CFFA8D2006EBF44 /* CustomPresentationAnimationController.swift in Sources */,
 				4A438FCE1CFF4CAD006EBF44 /* FMDatabase.m in Sources */,
 				4A438FB31CFE068F006EBF44 /* ViewController.swift in Sources */,
+				52BFCE4D221A1F8500D6482B /* UIViewController.swift in Sources */,
 				4A438FD21CFF4CAD006EBF44 /* FMResultSet.m in Sources */,
 				4A438FD01CFF4CAD006EBF44 /* FMDatabasePool.m in Sources */,
 				4A438FD91CFF533D006EBF44 /* Utility.swift in Sources */,
 				4A438FB11CFE068F006EBF44 /* AppDelegate.swift in Sources */,
 				4A438FDB1CFF53F1006EBF44 /* Ingresos.swift in Sources */,
-				4A438FE81CFFA8D2006EBF44 /* CustomPresentationController.swift in Sources */,
 				4A438FE01CFF5A03006EBF44 /* ModelManager.swift in Sources */,
 				4A438FEA1CFFA9DC006EBF44 /* AgregarIngresoViewController.swift in Sources */,
 				4A438FCF1CFF4CAD006EBF44 /* FMDatabaseAdditions.m in Sources */,

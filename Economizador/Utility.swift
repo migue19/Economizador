@@ -30,7 +30,7 @@ class Utility: NSObject {
             }
             
             if (error != nil) {
-              print("Error al Copiar la base: \(error)")
+              print("Error al Copiar la base: \(error!)")
             
             } else {
               print("Base Copiada Correctamente")

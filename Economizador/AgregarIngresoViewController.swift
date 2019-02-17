@@ -20,6 +20,7 @@ class AgregarIngresoViewController: UIViewController, UIViewControllerTransition
     //Protocol
     
     
+    @IBOutlet weak var viewMain: UIView!
     @IBOutlet weak var btnRegistrar: UIButton!
     @IBOutlet weak var btncerrar: UIButton!
     @IBOutlet weak var lblFecha: UITextField!
@@ -27,8 +28,9 @@ class AgregarIngresoViewController: UIViewController, UIViewControllerTransition
 
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        self.hideKeyboardWhenTappedAround()
         // Do any additional setup after loading the view.
+        RedondearBordeView(viewMain, borde: 2, color: .white, division: 16)
         RedondearBorde(btnRegistrar, borde: 2, color: UIColor.white, division: 4)
         RedondearBorde(btncerrar, borde: 4, color: UIColor.white, division: 2)
         let date = Date()
@@ -42,12 +44,32 @@ class AgregarIngresoViewController: UIViewController, UIViewControllerTransition
         
         
     }
+    
+    override func viewDidAppear(_ animated: Bool) {
+        UIView.animate(withDuration: 0.5) {
+            self.view.backgroundColor = UIColor(red: 0, green: 0, blue: 0, alpha: 0.6)
+        }
+    }
+    
+    override func viewWillDisappear(_ animated: Bool) {
+        self.view.backgroundColor = .clear
+    }
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
     
+    
+    func RedondearBordeView(_ objeto:UIView,borde: Double,color: UIColor,division: Int)
+    {
+        objeto.layer.borderWidth = CGFloat(borde)
+        objeto.layer.masksToBounds = false
+        objeto.layer.borderColor = color.cgColor
+        objeto.layer.cornerRadius = objeto.frame.size.height/CGFloat(division)
+        objeto.clipsToBounds = true
+        
+    }
     
     
     func RedondearBorde(_ objeto:UIButton,borde: Double,color: UIColor,division: Int)
@@ -75,7 +97,11 @@ class AgregarIngresoViewController: UIViewController, UIViewControllerTransition
        {
          let Fecha = lblFecha.text!
         
-          ModelManager.getInstance().addIngreso(Cantidad,Fecha: Fecha)
+        
+        
+        if(!ModelManager.getInstance().addIngreso(Cantidad,Fecha: Fecha)){
+            print("Error al agregar ingreso")
+        }
         
           if (delegate != nil) {
             delegate?.actualizarTabla()
@@ -99,13 +125,13 @@ class AgregarIngresoViewController: UIViewController, UIViewControllerTransition
 
     required init?(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)
-        self.commonInit()
+        //self.commonInit()
     }
     
     override init(nibName nibNameOrNil: String!, bundle nibBundleOrNil: Bundle!)  {
         super.init(nibName: nibNameOrNil, bundle: nibBundleOrNil)
         
-        self.commonInit()
+        //self.commonInit()
     }
     
     func commonInit() {
@@ -116,16 +142,16 @@ class AgregarIngresoViewController: UIViewController, UIViewControllerTransition
     
     // ---- UIViewControllerTransitioningDelegate methods
     
-    func presentationController(forPresented presented: UIViewController, presenting: UIViewController?, source: UIViewController) -> UIPresentationController? {
+    /*func presentationController(forPresented presented: UIViewController, presenting: UIViewController?, source: UIViewController) -> UIPresentationController? {
         
         if presented == self {
             return CustomPresentationController(presentedViewController: presented, presenting: presenting)
         }
         
         return nil
-    }
+    }*/
     
-    func animationController(forPresented presented: UIViewController, presenting: UIViewController, source: UIViewController) -> UIViewControllerAnimatedTransitioning? {
+    /*func animationController(forPresented presented: UIViewController, presenting: UIViewController, source: UIViewController) -> UIViewControllerAnimatedTransitioning? {
         
         if presented == self {
             return CustomPresentationAnimationController(isPresenting: true)
@@ -133,9 +159,9 @@ class AgregarIngresoViewController: UIViewController, UIViewControllerTransition
         else {
             return nil
         }
-    }
+    }*/
     
-    func animationController(forDismissed dismissed: UIViewController) -> UIViewControllerAnimatedTransitioning? {
+    /*func animationController(forDismissed dismissed: UIViewController) -> UIViewControllerAnimatedTransitioning? {
         
         if dismissed == self {
             return CustomPresentationAnimationController(isPresenting: false)
@@ -143,7 +169,7 @@ class AgregarIngresoViewController: UIViewController, UIViewControllerTransition
         else {
             return nil
         }
-    }
+    }*/
 
     
     /*

@@ -63,7 +63,7 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
 //Guardar la imagen Localmente para que no se pierda al cerrar la aplicacion
         //Si existe la imagen asignarla como foto de perfil
         let getImagePath = (paths as NSString).appendingPathComponent("perfil.jpg")
-        print(getImagePath)
+        //print(getImagePath)
         
         if (fileManager.fileExists(atPath: getImagePath))
         {
@@ -314,7 +314,7 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
             
             //Guardar la imagen seleccionada dentro de los archivos de la aplicacion
             let filePathToWrite = "\(self.paths)/perfil.jpg"
-            print("Ruta de la imagen: \(filePathToWrite)")
+            //print("Ruta de la imagen: \(filePathToWrite)")
             let jpgImageData = UIImageJPEGRepresentation(pickedImage, 1.0)
             self.fileManager.createFile(atPath: filePathToWrite, contents: jpgImageData, attributes: nil)
             
