@@ -25,19 +25,21 @@ class AgregarIngresoViewController: UIViewController, UIViewControllerTransition
     @IBOutlet weak var btncerrar: UIButton!
     @IBOutlet weak var lblFecha: UITextField!
     @IBOutlet weak var lblCantidad: UITextField!
-
+    @IBOutlet weak var lblConcepto: UITextField!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         self.hideKeyboardWhenTappedAround()
         // Do any additional setup after loading the view.
         RedondearBordeView(viewMain, borde: 2, color: .white, division: 16)
         RedondearBorde(btnRegistrar, borde: 2, color: UIColor.white, division: 4)
-        RedondearBorde(btncerrar, borde: 4, color: UIColor.white, division: 2)
+        RedondearBorde(btncerrar, borde: 2, color: UIColor.white, division: 2)
         let date = Date()
         let dateFormatter = DateFormatter()
         dateFormatter.dateFormat = "dd-MMMM-YYYY HH:mm:ss"
         let strDate = dateFormatter.string(from: date)
-        
+        lblCantidad.delegate = self
+        lblConcepto.delegate = self
         lblFecha.text = strDate
         
         
@@ -140,6 +142,7 @@ class AgregarIngresoViewController: UIViewController, UIViewControllerTransition
     }
     
     
+    
     // ---- UIViewControllerTransitioningDelegate methods
     
     /*func presentationController(forPresented presented: UIViewController, presenting: UIViewController?, source: UIViewController) -> UIPresentationController? {
@@ -182,4 +185,12 @@ class AgregarIngresoViewController: UIViewController, UIViewControllerTransition
     }
     */
 
+}
+
+
+extension AgregarIngresoViewController: UITextFieldDelegate{
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        textField.resignFirstResponder()
+        return true
+    }
 }

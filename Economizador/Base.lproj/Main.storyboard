@@ -222,6 +222,7 @@
                                             <constraint firstAttribute="height" constant="30" id="W4g-0G-2B8"/>
                                         </constraints>
                                         <fontDescription key="fontDescription" type="boldSystem" pointSize="24"/>
+                                        <inset key="contentEdgeInsets" minX="0.0" minY="0.0" maxX="0.0" maxY="5"/>
                                         <state key="normal" title="x">
                                             <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         </state>
@@ -230,13 +231,13 @@
                                         </connections>
                                     </button>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="REGISTRAR INGRESO" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1Kf-K1-5LS">
-                                        <rect key="frame" x="66.5" y="50" width="167" height="20.5"/>
+                                        <rect key="frame" x="66.5" y="10" width="167" height="20.5"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                         <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="lpU-kS-spF">
-                                        <rect key="frame" x="15" y="110.5" width="270" height="171"/>
+                                        <rect key="frame" x="15" y="60.5" width="270" height="201.5"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Fecha:" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fmZ-nO-15r">
                                                 <rect key="frame" x="0.0" y="0.0" width="270" height="20.5"/>
@@ -255,33 +256,48 @@
                                                 <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
-                                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="950.00" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="9D0-rp-cbI">
+                                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="250.00" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="9D0-rp-cbI">
                                                 <rect key="frame" x="0.0" y="101" width="270" height="30"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                                <textInputTraits key="textInputTraits" keyboardType="numbersAndPunctuation" keyboardAppearance="alert"/>
+                                                <textInputTraits key="textInputTraits" keyboardType="decimalPad" keyboardAppearance="alert" returnKeyType="next"/>
                                             </textField>
-                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="zXq-xv-hgi">
-                                                <rect key="frame" x="0.0" y="141" width="270" height="30"/>
-                                                <color key="backgroundColor" red="0.3333333432674408" green="0.3333333432674408" blue="0.3333333432674408" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                                <state key="normal" title="REGISTRAR">
-                                                    <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                                </state>
-                                                <connections>
-                                                    <action selector="Registrar:" destination="arz-Zi-hsa" eventType="touchUpInside" id="LXI-3D-iEa"/>
-                                                </connections>
-                                            </button>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Concepto:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jNh-PK-83K">
+                                                <rect key="frame" x="0.0" y="141" width="270" height="20.5"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Salida al Cine" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="7nm-XR-Vdf">
+                                                <rect key="frame" x="0.0" y="171.5" width="270" height="30"/>
+                                                <nil key="textColor"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                <textInputTraits key="textInputTraits" keyboardAppearance="alert" returnKeyType="continue"/>
+                                            </textField>
                                         </subviews>
                                     </stackView>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="zXq-xv-hgi">
+                                        <rect key="frame" x="15" y="282" width="270" height="30"/>
+                                        <color key="backgroundColor" red="0.3333333432674408" green="0.3333333432674408" blue="0.3333333432674408" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <state key="normal" title="REGISTRAR">
+                                            <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="Registrar:" destination="arz-Zi-hsa" eventType="touchUpInside" id="LXI-3D-iEa"/>
+                                        </connections>
+                                    </button>
                                 </subviews>
                                 <color key="backgroundColor" red="0.015440989339218491" green="0.025033891136422112" blue="0.057622247409326421" alpha="0.61738006161971826" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
-                                    <constraint firstItem="1Kf-K1-5LS" firstAttribute="top" secondItem="znu-Oe-wPy" secondAttribute="top" constant="50" id="3BY-lq-7ur"/>
-                                    <constraint firstItem="lpU-kS-spF" firstAttribute="top" secondItem="1Kf-K1-5LS" secondAttribute="bottom" constant="40" id="FuR-eh-d2T"/>
+                                    <constraint firstItem="1Kf-K1-5LS" firstAttribute="top" secondItem="znu-Oe-wPy" secondAttribute="top" constant="10" id="3BY-lq-7ur"/>
+                                    <constraint firstItem="lpU-kS-spF" firstAttribute="top" secondItem="1Kf-K1-5LS" secondAttribute="bottom" constant="30" id="FuR-eh-d2T"/>
                                     <constraint firstAttribute="trailing" secondItem="D5g-mJ-a5L" secondAttribute="trailing" constant="10" id="M0a-vD-dHD"/>
+                                    <constraint firstItem="zXq-xv-hgi" firstAttribute="centerX" secondItem="znu-Oe-wPy" secondAttribute="centerX" id="Xtf-EL-bns"/>
                                     <constraint firstItem="1Kf-K1-5LS" firstAttribute="centerX" secondItem="znu-Oe-wPy" secondAttribute="centerX" id="aoZ-j4-1ZZ"/>
                                     <constraint firstItem="lpU-kS-spF" firstAttribute="centerX" secondItem="znu-Oe-wPy" secondAttribute="centerX" id="avW-eL-PC5"/>
+                                    <constraint firstItem="zXq-xv-hgi" firstAttribute="width" secondItem="znu-Oe-wPy" secondAttribute="width" multiplier="0.9" id="bxa-Oe-gij"/>
                                     <constraint firstItem="lpU-kS-spF" firstAttribute="width" secondItem="znu-Oe-wPy" secondAttribute="width" multiplier="0.9" id="i2k-L0-Hwn"/>
                                     <constraint firstItem="D5g-mJ-a5L" firstAttribute="top" secondItem="znu-Oe-wPy" secondAttribute="top" constant="10" id="nLU-qk-iwc"/>
+                                    <constraint firstItem="zXq-xv-hgi" firstAttribute="top" secondItem="lpU-kS-spF" secondAttribute="bottom" constant="20" id="rVQ-ae-Srt"/>
                                 </constraints>
                             </view>
                         </subviews>
@@ -299,6 +315,7 @@
                         <outlet property="btnRegistrar" destination="zXq-xv-hgi" id="DZr-6Z-Qdp"/>
                         <outlet property="btncerrar" destination="D5g-mJ-a5L" id="0vv-Xb-a9o"/>
                         <outlet property="lblCantidad" destination="9D0-rp-cbI" id="BmN-f2-XVL"/>
+                        <outlet property="lblConcepto" destination="7nm-XR-Vdf" id="piB-hT-BfC"/>
                         <outlet property="lblFecha" destination="qgn-pX-98I" id="i6h-vO-PhI"/>
                         <outlet property="viewMain" destination="znu-Oe-wPy" id="sd7-BS-Yj4"/>
                     </connections>

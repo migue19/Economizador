@@ -358,11 +358,17 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
         return true
     }
     
+    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        return 60
+    }
+    
     func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCellEditingStyle, forRowAt indexPath: IndexPath) {
         if(editingStyle == UITableViewCellEditingStyle.delete)
         {
            let cellingresos: Ingresos = marrIngresos.object(at: indexPath.row) as! Ingresos
-            ModelManager.getInstance().deleteIngreso(cellingresos)
+            if(!ModelManager.getInstance().deleteIngreso(cellingresos)){
+                print("Error al eliminar ingreso")
+            }
             
             marrIngresos = []
             marrIngresos = ModelManager.getInstance().getAllData()

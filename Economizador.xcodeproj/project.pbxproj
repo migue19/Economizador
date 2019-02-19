@@ -70,7 +70,7 @@
 		4A438FA41CFE068E006EBF44 = {
 			isa = PBXGroup;
 			children = (
-				52993B8F2219F201001B0DF1 /* frameworks */,
+				52993B8F2219F201001B0DF1 /* Database */,
 				4A438FD41CFF4D37006EBF44 /* libsqlite3.0.tbd */,
 				4A438FAF1CFE068F006EBF44 /* Economizador */,
 				4A438FAE1CFE068E006EBF44 /* Products */,
@@ -129,12 +129,12 @@
 			name = Librerias;
 			sourceTree = "<group>";
 		};
-		52993B8F2219F201001B0DF1 /* frameworks */ = {
+		52993B8F2219F201001B0DF1 /* Database */ = {
 			isa = PBXGroup;
 			children = (
 				4A438FE31CFF756B006EBF44 /* EconomizadorDB.sqlite */,
 			);
-			path = frameworks;
+			path = Database;
 			sourceTree = "<group>";
 		};
 		52BFCE4B221A1F5E00D6482B /* Extension */ = {
